@@ -18,14 +18,25 @@ router.post('/', function(req, res) {
   let query = "select * from " + userType + " where userName = ? and userPwd = ?";
   db.query(query, [userName, userPwd], function (err, data) {
     if (err) {
-      console.log(query);
       throw err;
     }
     else if (data.length > 0) {
-      console.log('Login success!');
+      // Redirect to the correct user page in view.
+      switch (userType) {
+        case "admin":
+          res.redirect('/admin');
+          break;
+        case "driver":
+          res.redirect('/driver');
+          break;
+        case "technician":
+          res.redirect('/technician');
+          break;
+      }
     }
     else {
-      console.log('Login failed');
+      req.flash('error', 'Login failed!');
+      res.redirect('/');
     }
   });
 })

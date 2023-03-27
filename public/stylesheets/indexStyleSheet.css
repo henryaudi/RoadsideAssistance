@@ -22,7 +22,7 @@ form {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
 }
 
 form .form-group {
@@ -70,5 +70,14 @@ form input[type="submit"][name="submitButton"] {
     appearance: none;
     text-align: center;
     justify-content: center;
-    border-width: 5px;
+    border-width: 10px;
+}
+
+.alert {
+    height: 30px;
+    background-color: #cc3300;
+    color: white;
+    font-weight: bold;
+    padding-top:5px;
+    text-align: center;
 }

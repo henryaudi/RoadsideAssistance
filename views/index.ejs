@@ -6,6 +6,9 @@
     <link rel='stylesheet' href='/stylesheets/indexStyleSheet.css' />
   </head>
   <body>
+  <% if (messages.error || messages.success) { %>
+    <div class="alert alert-<%= messages.error ? 'danger' : 'success' %>"><%= messages.error || messages.success %></div>
+  <% } %>
     <div class="container">
       <!-- User login page header-->
       <header>
