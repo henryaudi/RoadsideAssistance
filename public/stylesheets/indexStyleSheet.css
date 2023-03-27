@@ -1,0 +1,74 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#CentralIcon {
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form .form-group {
+    margin-top: 20px;
+}
+
+form .form-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+form label {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+form input {
+    padding-left: 10px;
+    font-size: 22px;
+    width: 338px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+
+form select {
+    margin-left: 150px;
+    width: 200px;
+    height: 25px;
+    border-radius: 6px;
+    border: 2px solid black;
+}
+
+form input[type="submit"][name="submitButton"] {
+    margin-top: 20px;
+    margin-left: 120px;
+    color: black;
+    font-weight: bold;
+    font: 30px Arial, Helvetica, sans-serif;
+    width: 300px;
+    height: 75px;
+    cursor: pointer;
+    appearance: none;
+    text-align: center;
+    justify-content: center;
+    border-width: 5px;
+}
