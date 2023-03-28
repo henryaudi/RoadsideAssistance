@@ -1,43 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>ROADSIDE ASSISTANCE APPLICATION</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/indexStyleSheet.css' />
-  </head>
-  <body>
-  <% if (messages.error || messages.success) { %>
-    <div class="alert alert-<%= messages.error ? 'danger' : 'success' %>"><%= messages.error || messages.success %></div>
-  <% } %>
-    <div class="container">
-      <!-- User login page header-->
-      <header>
+    <script src="https://kit.fontawesome.com/4b480dd900.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <!-- User login page header-->
+    <header>
         <h1>
-          <img src="/images/RoadsideAssistanceIcon01.png" alt="">
+            <img src="/images/RoadsideAssistanceIcon01.png" alt="">
         </h1>
         <h2 id="CentralIcon">
-          <img src="/images/GuyWithHelmetIcon01.png" alt="">
+            <img src="/images/GuyWithHelmetIcon01.png" alt="">
         </h2>
-        <h3>User Login</h3>
-      </header>
+        <h3>USER LOGIN</h3>
+    </header>
 
-      <form action="" method="post">
+    <form class="form-login" action="" method="post" action="">
         <div class="form-group">
-          <label for="">Username</label>
-          <input  type="text" name="userName">
+            <label for="">USERNAME</label>
+            <input  type="text" name="userName">
         </div>
         <div class="form-group">
-          <label for="">Password</label>
-          <input  type="password" name="userPwd">
+            <label for="">PASSWORD</label>
+            <input  type="password" name="userPwd">
         </div>
         <select class="form-group" name="userType">
-          <option value="">Please select user type</option>
-          <option value="driver">Driver</option>
-          <option value="technician">Technician</option>
-          <option value="admin">Administrator</option>
+            <option value="">Please select user type</option>
+            <option value="driver">Driver</option>
+            <option value="technician">Technician</option>
+            <option value="admin">Administrator</option>
         </select>
-        <input type="submit" name="submitButton" value="Login">
-      </form>
+        <input type="submit" name="submitButton" value="LOGIN">
+    </form>
+    <button id="add-user" class="add-button">Register</button>
+    <% if (messages.error) { %>
+        <div class="alert-error"><%= messages.error %></div>
+    <% } %>
+</div>
+
+<div class="dialog isHidden"></div>
+<div class="dialog-wrap isHidden">
+    <div class="dialog-header">
+        <h4>Create user</h4>
+        <div class="close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
     </div>
-  </body>
+    <form class="form-registration" action="/index" method="post">
+        <div>
+            <p>Username*</p>
+            <p>
+                <input type="text" class="form-control" name="userName"/>
+            </p>
+        </div>
+        <div>
+            <p>User Password*</p>
+            <p>
+                <input type="password" class="form-control" name="userPwd"/>
+            </p>
+        </div>
+        <div>
+            <select name="userType">
+                <option value="">Please select user type</option>
+                <option value="driver">Driver</option>
+                <option value="technician">Technician</option>
+                <option value="admin">Administrator</option>
+            </select>
+        </div>
+        <div class="dialog-footer">
+            <span class="cancel">Cancel</span>
+            <button class="determine">Create</button>
+        </div>
+    </form>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Display the alert for 1 second
+    setTimeout(function(){
+        var alert = document.querySelector('.alert-error');
+        if (alert) { alert.style.display = 'none'; }
+    }, 2000);
+</script>
+<script>
+    //Modify the #registerBtn
+    $(function() {
+        $('#add-user').click(function() {
+            $('.isHidden').show();
+        })
+
+        $('.close, .cancel').click(function() {
+            $('.isHidden').hide();
+        })
+    })
+</script>
 </html>

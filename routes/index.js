@@ -35,7 +35,7 @@ router.post('/', function(req, res) {
       }
     }
     else {
-      req.flash('error', 'Login failed!');
+      req.flash('error', '[WARNING] Login failed!');
       res.redirect('/');
     }
   });

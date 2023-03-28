@@ -15,32 +15,36 @@ header {
 #CentralIcon {
     justify-content: center;
     margin-top: 50px;
-    margin-left: 10px;
+    margin-left: -50px;
 }
 
-form {
+.form-login {
+    padding: 5px 5px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -40%);
+    border: 2px solid black;
+    border-radius: 12px;
 }
 
-form .form-group {
+.form-login .form-group {
     margin-top: 20px;
 }
 
-form .form-group {
+.form-login .form-group {
     display: flex;
     justify-content: space-between;
 }
 
-form label {
+.form-login label {
     font-size: 24px;
     font-weight: 600;
     line-height: 40px;
+    color: black;
 }
 
-form input {
+.form-login input {
     padding-left: 10px;
     font-size: 22px;
     width: 338px;
@@ -50,7 +54,7 @@ form input {
     border: 2px solid black;
 }
 
-form select {
+.form-login select {
     margin-left: 150px;
     width: 200px;
     height: 25px;
@@ -58,9 +62,9 @@ form select {
     border: 2px solid black;
 }
 
-form input[type="submit"][name="submitButton"] {
+.form-login input[type="submit"][name="submitButton"] {
     margin-top: 20px;
-    margin-left: 120px;
+    margin-left: 100px;
     color: black;
     font-weight: bold;
     font: 30px Arial, Helvetica, sans-serif;
@@ -73,11 +77,76 @@ form input[type="submit"][name="submitButton"] {
     border-width: 10px;
 }
 
-.alert {
+.alert-error {
+    position: absolute;
+    left: 50%;
+    margin-top: -120px;
+    transform: translateX(-50%);
     height: 30px;
+    width: 300px;
+    padding: 0px ;
     background-color: #cc3300;
     color: white;
     font-weight: bold;
     padding-top:5px;
     text-align: center;
+    border-radius: 12px;
 }
+
+.add-button {
+    position: relative;
+    margin-top: 20px;
+}
+
+.dialog {
+    position: fixed;
+    rigth: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .5;
+    overflow: auto;
+}
+.dialog-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    padding: 20px;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 24px;
+    transform: translate(-50%, -50%);
+    border: 4px solid black;
+}
+
+.dialog-header {
+    position: relative;
+}
+
+.dialog-header > div {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.form-registration > div {
+    margin:20px 0;
+    margin-left: 100px;
+}
+
+.form-registration > div > p > input {
+    font-size: 16px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding-left: 5px;
+}
+
+.isHidden {
+    display: none;
+}
+

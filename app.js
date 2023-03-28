@@ -7,6 +7,9 @@ var flash = require('express-flash');
 const session = require('express-session');
 
 var indexRouter = require('./routes/index');
+var driverRouter = require('./routes/driver');
+var driver_left = require('./routes/driver_left');
+var driver_right = require('./routes/driver_right');
 
 var app = express();
 
@@ -26,8 +29,13 @@ app.use(session({
   saveUninitialized: true
 }));
 
+// Login page.
 app.use('/', indexRouter);
 
+// Driver page.
+app.use('/driver', driverRouter);
+app.use('/driver_left', driver_left);    // Left banner in driver view
+app.use('/driver_right', driver_right);    // Right banner in driver view
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
