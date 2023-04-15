@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>NEW REQUEST</title>
+    <link rel='stylesheet' href='/stylesheets/addRequest_stylesheet.css' />
+</head>
+<body>
+<div class="right-banner-newRequest">
+    <div class="container">
+        <div class="dialog-header">
+            <h1>Create new request</h1>
+        </div>
+        <form class="form-add" action="/newRequest" method="post">
+            <div>
+                <p>Your location</p>
+                <p>
+                    <input type="text" class="form-control" name="location"/>
+                </p>
+            </div>
+            <div>
+                <p>Description</p>
+                <p>
+                    <textarea name="comment" cols="50" rows="10", placeholder="Please briefly describe the incident...(255 word limit)"></textarea>
+                </p>
+            </div>
+            <div class="dialog-footer">
+                <span class="cancel">Cancel</span>
+                <button class="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <img src="/images/FilingReport.png" alt="" id="filingReport">
+    </div>
+</div>
+    <% if (messages.error) { %>
+        <div class="alert-error"><%= messages.error %></div>
+    <% } %>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Display the alert for 2 second
+    setTimeout(function(){
+        var alert = document.querySelector('.alert-error');
+        if (alert) { alert.style.display = 'none'; }
+    }, 2000);
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function() {
+        $('.cancel').click(function () {
+            // Redirect to the right banner if clicking 'cancel' button.
+            window.location.href = '/driver_right';
+        })
+    })
+</script>
+</html>

@@ -5,11 +5,11 @@ const db = require("../sql");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    const userName = req.session.driver_userName;
-    getUserByUserName(userName, 'driver',(err, userId) => {
+    const userName = req.session.tech_userName;
+    getUserByUserName(userName, 'technician',(err, userId) => {
         if (err) { throw err; }
-        req.session.driver_userId = userId;
-        res.render('driver_left', {userName: userName, userId: userId});
+        req.session.tech_userId = userId;
+        res.render('tech_left', {userName: userName, userId: userId});
     });
 });
 

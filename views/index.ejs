@@ -19,7 +19,7 @@
         <h3>USER LOGIN</h3>
     </header>
 
-    <form class="form-login" action="" method="post" action="">
+    <form class="form-login" action="" method="post">
         <div class="form-group">
             <label for="">USERNAME</label>
             <input  type="text" name="userName">
@@ -36,10 +36,14 @@
         </select>
         <input type="submit" name="submitButton" value="LOGIN">
     </form>
-    <button id="add-user" class="add-button">Register</button>
+    <button class="add-button">Register</button>
     <% if (messages.error) { %>
         <div class="alert-error"><%= messages.error %></div>
     <% } %>
+    <% if (messages.success) { %>
+        <div class="alert-success"><%= messages.success %></div>
+    <% } %>
+
 </div>
 
 <div class="dialog isHidden"></div>
@@ -50,7 +54,7 @@
             <i class="fa-solid fa-xmark"></i>
         </div>
     </div>
-    <form class="form-registration" action="/index" method="post">
+    <form class="form-registration" action="/addUser" method="post">
         <div>
             <p>Username*</p>
             <p>
@@ -78,19 +82,30 @@
     </form>
 </div>
 
+<!--<% if (messages.success) { %>-->
+<!--    <div class="alert-success"><%= messages.success %></div>-->
+<!--<% } %>-->
+
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    // Display the alert for 1 second
+    // Display the alert for 2 second
     setTimeout(function(){
         var alert = document.querySelector('.alert-error');
         if (alert) { alert.style.display = 'none'; }
     }, 2000);
 </script>
 <script>
+    // Display the alert for 1 second
+    setTimeout(function(){
+        var alert = document.querySelector('.alert-success');
+        if (alert) { alert.style.display = 'none'; }
+    }, 2000);
+</script>
+<script>
     //Modify the #registerBtn
     $(function() {
-        $('#add-user').click(function() {
+        $('.add-button').click(function() {
             $('.isHidden').show();
         })
 

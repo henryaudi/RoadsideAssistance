@@ -1,15 +1,41 @@
-.right-banner {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: black;
+body {
     font-family: Arial, sans-serif;
+    position: relative;
 }
-.right-banner > img {
-    height: 400px;
-    width: 500px;
+
+.right-banner-newRequest {
+
+}
+
+.container {
+    display: inline-block;
+}
+
+.container:first-child {
+    position: absolute;
+    margin-top: 5px;
+}
+
+.container:last-child > img {
+    position: absolute;
+    height: 300px;
+    width: auto;
+    margin-top: 100px;
+    margin-left: 500px;
+}
+
+.dialog-footer span, .dialog-footer button {
+    width: 60px;
+    height: 30px;
+    padding: 6px 5px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dialog-footer > button {
+    background-color: gray;
+    color: #ffffff;
 }
 
 .alert-error {

@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+.content >  * {
+    margin-top: 10px;
+}
+
+#container-title {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.container div:first-child {
+    border-bottom: 4px solid gray;
+}
+
+.tech-info span:last-child {
+    margin-left: 30px;
+}
+
+.container div:nth-child(2) {
+    margin-top: 10px;
+}
+
+.table-active {
+    width: 100%;
+    text-align: center;
+}
+
+.table-active thead tr {
+    height: 40px;
+}
+
+.table-active th {
+    text-align: center;
+}
+
+.table-active > tbody > tr > td {
+    line-height: 25px;
+    border-bottom: 2px solid gray;
+}
+
+.dialog {
+    position: fixed;
+    rigth: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .8;
+    overflow: auto;
+}
+
+.dialog-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    padding: 20px;
+    width: 400px;
+    background-color: #fff;
+    border-radius: 24px;
+    transform: translate(-50%, -50%);
+    border: 4px solid black;
+}
+
+.dialog-header {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+}
+
+.dialog-header > div {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.dialog-footer {
+    text-align: right;
+}
+
+.dialog-footer button, .dialog-footer span {
+    width: 64px;
+    height: 30px;
+    padding: 6px 5px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.isAccepted {
+    display: none;
+}
+
+.alert-success {
+    position: absolute;
+    left: 50%;
+    margin-top: -120px;
+    transform: translateX(-50%);
+    height: 30px;
+    width: 300px;
+    background-color: #00B7FF;
+    color: white;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: center;
+    border-radius: 12px;
+}

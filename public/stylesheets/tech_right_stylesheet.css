@@ -1,0 +1,13 @@
+.right-banner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+.right-banner > img {
+    height: 400px;
+    width: 500px;
+}

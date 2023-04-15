@@ -2,10 +2,25 @@
 <html lang="en">
 <head>
     <title>Driver Page Left</title>
-    <link rel='stylesheet' href='/stylesheets/common.css' />
     <link rel='stylesheet' href='/stylesheets/driver_right_stylesheet.css' />
 </head>
 <body>
-    Chat Window here
+    <div class="right-banner">
+        <img src="/images/GuyWithHelmetIcon01.png" alt="">
+        <h1>WELCOME TO THE ROADSIDE ASSISTANCE SERVICE CENTER!</h1>
+    </div>
+    <% if (messages.error) { %>
+        <div class="alert-error"><%= messages.error %></div>
+    <% } %>
+    <% if (messages.success) { %>
+        <div class="alert-success"><%= messages.success %></div>
+    <% } %>
 </body>
+<script>
+    // Display the alert for 2 second
+    setTimeout(function(){
+        var alert = document.querySelector('.alert-success');
+        if (alert) { alert.style.display = 'none'; }
+    }, 2000);
+</script>
 </html>

@@ -77,25 +77,12 @@ header {
     border-width: 10px;
 }
 
-.alert-error {
-    position: absolute;
-    left: 50%;
-    margin-top: -120px;
-    transform: translateX(-50%);
-    height: 30px;
-    width: 300px;
-    padding: 0px ;
-    background-color: #cc3300;
-    color: white;
-    font-weight: bold;
-    padding-top:5px;
-    text-align: center;
-    border-radius: 12px;
-}
-
 .add-button {
     position: relative;
-    margin-top: 20px;
+    margin-top: 200px;
+    margin-left: 920px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .dialog {
@@ -125,6 +112,9 @@ header {
 
 .dialog-header {
     position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
 }
 
 .dialog-header > div {
@@ -134,7 +124,7 @@ header {
 }
 
 .form-registration > div {
-    margin:20px 0;
+    padding: 10px 0;
     margin-left: 100px;
 }
 
@@ -146,7 +136,49 @@ header {
     padding-left: 5px;
 }
 
+.dialog-footer {
+    text-align: right;
+}
+
+.dialog-footer button, .dialog-footer span {
+    width: 64px;
+    height: 30px;
+    padding: 6px 5px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid black;
+}
+
 .isHidden {
     display: none;
 }
 
+.alert-error {
+    position: absolute;
+    left: 50%;
+    margin-top: -120px;
+    transform: translateX(-50%);
+    height: 30px;
+    width: 300px;
+    background-color: #cc3300;
+    color: white;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.alert-success {
+    position: absolute;
+    left: 50%;
+    margin-top: -120px;
+    transform: translateX(-50%);
+    height: 30px;
+    width: 300px;
+    background-color: #00B7FF;
+    color: white;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: center;
+    border-radius: 12px;
+}

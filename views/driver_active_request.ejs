@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Driver Active Request</title>
+    <link rel='stylesheet' href='/stylesheets/tech_active_request_stylesheet.css' />
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <!-- Display user information -->
+        <h id="container-title">DRIVER ACTIVE REQUESTS</h>
+        <div class="driver-info">
+            <span>Driver: <%= userName %> </span>
+            <span>User ID: <%= userId %> </span>
+        </div>
+    </div>
+    <div class="content">
+        <h style="font-weight: bold;">ACTIVE REQUEST</h>
+        <table class="table-active">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Driver</th>
+                <th>Technician</th>
+                <th>Location</th>
+                <th>Comment</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% record.forEach(function(item) {%>
+                <tr>
+                    <td><%= item.request_id %></td>
+                    <td><%= item.driver %></td>
+                    <td><%= item.tech %></td>
+                    <td><%= item.location %></td>
+                    <td><%= item.comment %></td>
+                    <td><%= item.status %></td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Driver Active Request</title>
+    <link rel='stylesheet' href='/stylesheets/tech_active_request_stylesheet.css' />
+    <script src="https://kit.fontawesome.com/4b480dd900.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <!-- Display user information -->
+        <h id="container-title">TECH ACTIVE REQUESTS</h>
+        <div class="tech-info">
+            <span>Technician: <%= userName %> </span>
+            <span>User ID: <%= userId %> </span>
+        </div>
+    </div>
+    <div class="content">
+        <h style="font-weight: bold;">ACTIVE REQUEST</h>
+        <table class="table-active">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Driver</th>
+                <th>Technician</th>
+                <th>Location</th>
+                <th>Comment</th>
+                <th>Accept?</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% record.forEach(function(item) {%>
+                <tr>
+                    <td><%= item.request_id %></td>
+                    <td><%= item.driver %></td>
+                    <td><%= item.tech %></td>
+                    <td><%= item.location %></td>
+                    <td><%= item.comment %></td>
+                    <td>
+                        <i class="fa-solid fa-square-check" data-id="<%= item.request_id %>"></i>
+                    </td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<!-- Accept a request -->
+<div class="dialog isAccepted"></div>
+<div class="dialog-wrap isAccepted">
+    <div class="dialog-header">
+        <h7>ACCEPT REQUEST?</h7>
+        <div class="close" style="color: black">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <span class="cancel">Cancel</span>
+        <button class="determine-accept">Accept</button>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Display the alert for 2 seconds.
+    setTimeout(function(){
+        var alert = document.querySelector('.alert-success');
+        if (alert) { alert.style.display = 'none'; }
+    }, 2000);
+</script>
+<script>
+    $(function() {
+        let id;
+        // Show the confirmation.
+        $('.fa-square-check').click(function() {
+            id = $(this).data('id');
+            $('.isAccepted').show();
+        })
+
+        // Hide the confirmation.
+        $('.close, .cancel').click(function() {
+            $('.isAccepted').hide();
+        })
+
+        // Confirmed to accept the request.
+        $('.determine-accept').click(function() {
+            window.location.href = `/accept?id=${id}`;
+        })
+    })
+</script>
+</html>
