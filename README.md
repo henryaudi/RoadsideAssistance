@@ -82,6 +82,6 @@ npm run start
 **Shangjie Zheng**
 
 - **Affiliation:** Southern Methodist University
-- **E-mail:** [shangjiez@mail.smu.edu](mailto:shangjiez@mail.smu.edu)
+- **E-mail:** [shangjiehz@gmail.com](mailto:shangjiehz@gmail.com)
 
 Feel free to reach out for any question or contributions to the project.
